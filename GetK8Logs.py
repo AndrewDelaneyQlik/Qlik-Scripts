@@ -1,3 +1,21 @@
+#############################################################################################
+#
+#  This script is intended to make it very simple to dump out all logs from a K8 cluster
+#  to a local file system for use in troubleshooting and in preparation for supplying them
+#  to a support organisatoin
+#
+#  It assumes there is a preconfigured kubectl and:
+#  - Creates a logs subfolder
+#  - Gets a list of all pods
+#  - Gets a description of each pod and writes it to file
+#  - Gets the logs for the current containers of each pod and writes them to a file
+#  - Gets the logs for previous instances of each pod (where they exist) and write them to file
+#
+#  This has been tested on a very small number of Windows and Linux environments
+#  Use at your own risk
+#
+############################################################################################
+
 import os
 import subprocess
 import platform
